@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, Ruler, PenTool, Image as ImageIcon, Layers, Ha
 import { motion } from 'framer-motion';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import TypewriterText from '../components/TypewriterText';
+import { FadeInUp, StaggerContainer, StaggerItem, GoldLineDrawing } from '../components/ScrollAnimations';
 import homeHeroBg from '../assets/home-hero.jpg';
 import homeAboutImg from '../assets/home-about.jpg';
 import homeCtaBg from '../assets/home-cta.jpg';
@@ -186,17 +187,18 @@ const Home = () => {
       {/* Transformation Slider Section */}
       <section className="section" style={{ backgroundColor: '#fcfcf7', padding: '6rem 0' }}>
         <div className="container">
-          <div className="text-center" style={{ marginBottom: '4rem' }}>
+          <FadeInUp className="text-center" style={{ marginBottom: '4rem' }}>
             <span className="subtitle" style={{ color: 'var(--accent-color)', letterSpacing: '3px', fontSize: '0.9rem', fontWeight: 'bold' }}>TRANSFORMATIONS</span>
             <h2 className="section-title" style={{ color: '#222', fontSize: '3rem', marginTop: '1rem', marginBottom: '1rem', fontFamily: 'Playfair Display, serif' }}>Before & After Showcase</h2>
+            <GoldLineDrawing width="100px" direction="center" style={{ margin: '0 auto 1.5rem auto' }} />
             <p style={{ color: '#666', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem' }}>
               Drag the golden divider to see the structural conversion from bare rooms to customized designer living.
             </p>
-          </div>
+          </FadeInUp>
           
-          <div className="transformations-grid">
+          <StaggerContainer className="transformations-grid">
             {transformations.map((item, index) => (
-              <div key={index} className="transformation-card animate-fade-in" style={{animationDelay: `${index * 0.1}s`, display: 'flex', flexDirection: 'column'}}>
+              <StaggerItem key={index} className="transformation-card" style={{display: 'flex', flexDirection: 'column'}}>
                 <div className="service-slider" style={{ width: '100%', marginBottom: '1rem' }}>
                   <BeforeAfterSlider beforeImage={item.before} afterImage={item.after} />
                 </div>
@@ -204,22 +206,23 @@ const Home = () => {
                   <h3 style={{ color: '#222', fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', margin: 0, fontWeight: 'bold' }}>{item.title}</h3>
                   <span style={{ color: '#888', fontSize: '0.9rem' }}>{item.location}</span>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Expertise Section */}
       <section className="section" style={{ backgroundColor: '#fff' }}>
         <div className="container">
-          <div className="text-center" style={{ marginBottom: '4rem' }}>
+          <FadeInUp className="text-center" style={{ marginBottom: '4rem' }}>
             <span className="subtitle" style={{ color: 'var(--accent-color)', letterSpacing: '3px', fontSize: '0.9rem', fontWeight: 'bold' }}>OUR EXPERTISE</span>
             <h2 className="section-title" style={{ color: '#222', fontSize: '3rem', marginTop: '1rem', marginBottom: '1rem', fontFamily: 'Playfair Display, serif' }}>From Vision to Reality</h2>
+            <GoldLineDrawing width="100px" direction="center" style={{ margin: '0 auto 1.5rem auto' }} />
             <p style={{ color: '#666', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem' }}>
               From handcrafted furniture to complete turnkey interiors, every detail is designed and executed with precision.
             </p>
-          </div>
+          </FadeInUp>
           
           <div className="expertise-grid">
             <div className="expertise-list">
@@ -283,7 +286,7 @@ const Home = () => {
       {/* Execution Roadmap Section */}
       <section className="section" style={{ backgroundColor: '#1a1a1a', color: '#fff', padding: '6rem 0' }}>
         <div className="container">
-          <div className="text-center" style={{ marginBottom: '5rem' }}>
+          <FadeInUp className="text-center" style={{ marginBottom: '5rem' }}>
             <h2 className="section-title" style={{ color: '#fff', fontSize: '3.5rem', marginBottom: '1rem', fontFamily: 'Playfair Display, serif' }}>From Vision to Reality</h2>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '1.5rem' }}>
               <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--accent-color)' }}></div>
@@ -293,11 +296,11 @@ const Home = () => {
             <p style={{ color: '#ccc', maxWidth: '800px', margin: '0 auto', fontSize: '1.2rem', lineHeight: '1.6' }}>
               Our structured 6-step turnkey workflow guarantees architectural precision, total cost transparency, and on-time handover.
             </p>
-          </div>
+          </FadeInUp>
 
-          <div className="roadmap-grid">
+          <StaggerContainer className="roadmap-grid">
             {/* Step 1 */}
-            <div className="roadmap-step dark-step">
+            <StaggerItem className="roadmap-step dark-step">
               <div className="step-header">
                 <div className="step-num-icon">
                   <span className="step-number-dark">01</span>
@@ -312,10 +315,10 @@ const Home = () => {
                 <p><CheckCircle size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Output: Accurate site dimensions & functional requirement brief</p>
                 <p><MapPin size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Free visit in Tolichowki, Shaikpet & across Hyderabad</p>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* Step 2 */}
-            <div className="roadmap-step dark-step">
+            <StaggerItem className="roadmap-step dark-step">
               <div className="step-header">
                 <div className="step-num-icon">
                   <span className="step-number-dark">02</span>
@@ -330,10 +333,10 @@ const Home = () => {
                 <p><CheckCircle size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Output: Detailed 2D layout plans & structural blueprints</p>
                 <p><MapPin size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Customized for apartments, villas & commercial spaces</p>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* Step 3 */}
-            <div className="roadmap-step dark-step">
+            <StaggerItem className="roadmap-step dark-step">
               <div className="step-header">
                 <div className="step-num-icon">
                   <span className="step-number-dark">03</span>
@@ -348,10 +351,10 @@ const Home = () => {
                 <p><CheckCircle size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Output: HD 3D visual renders & client sign-off</p>
                 <p><MapPin size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> See your exact finishes before a single nail is hammered</p>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* Step 4 */}
-            <div className="roadmap-step dark-step">
+            <StaggerItem className="roadmap-step dark-step">
               <div className="step-header">
                 <div className="step-num-icon">
                   <span className="step-number-dark">04</span>
@@ -366,10 +369,10 @@ const Home = () => {
                 <p><CheckCircle size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Output: Material approval sample board & final BOQ bill</p>
                 <p><MapPin size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Genuine IS:710 Marine Plywood & German hardware</p>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* Step 5 */}
-            <div className="roadmap-step dark-step">
+            <StaggerItem className="roadmap-step dark-step">
               <div className="step-header">
                 <div className="step-num-icon">
                   <span className="step-number-dark">05</span>
@@ -384,10 +387,10 @@ const Home = () => {
                 <p><CheckCircle size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Output: Factory-finish carpentry & on-site modular installation</p>
                 <p><MapPin size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Direct workshop fabrication in Hyderabad</p>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* Step 6 */}
-            <div className="roadmap-step dark-step">
+            <StaggerItem className="roadmap-step dark-step">
               <div className="step-header">
                 <div className="step-num-icon">
                   <span className="step-number-dark">06</span>
@@ -402,8 +405,8 @@ const Home = () => {
                 <p><CheckCircle size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Output: Deep-cleaned pristine space + Warranty documentation</p>
                 <p><MapPin size={14} style={{color:'var(--accent-color)', marginRight:'8px'}}/> Guaranteed on-time handover with warranty</p>
               </div>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -412,14 +415,15 @@ const Home = () => {
       {/* Testimonials Section */}
       <section className="section" style={{ backgroundColor: '#fcfcf7', padding: '6rem 0' }}>
         <div className="container">
-          <div className="text-center" style={{ marginBottom: '4rem' }}>
+          <FadeInUp className="text-center" style={{ marginBottom: '4rem' }}>
             <span className="subtitle" style={{ color: 'var(--accent-color)', letterSpacing: '3px', fontSize: '0.9rem', fontWeight: 'bold' }}>CLIENT SUCCESS STORIES</span>
             <h2 className="section-title" style={{ color: '#222', fontSize: '3rem', marginTop: '1rem', marginBottom: '1rem', fontFamily: 'Playfair Display, serif' }}>What Our Clients Say</h2>
-          </div>
+            <GoldLineDrawing width="100px" direction="center" style={{ margin: '0 auto 1.5rem auto' }} />
+          </FadeInUp>
           
         </div>
         
-        <div className="marquee-container">
+        <FadeInUp className="marquee-container">
           <div className="marquee-content">
             {[...testimonialsData, ...testimonialsData].map((testimonial, idx) => (
               <div key={idx} className="testimonial-card" style={{ width: '400px', flexShrink: 0, backgroundColor: '#fff', padding: '2.5rem', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', whiteSpace: 'normal' }}>
@@ -437,7 +441,7 @@ const Home = () => {
               </div>
             ))}
           </div>
-        </div>
+        </FadeInUp>
       </section>
 
 
@@ -445,9 +449,10 @@ const Home = () => {
       {/* Recent Projects Section */}
       <section className="section" style={{ backgroundColor: '#fff' }}>
         <div className="container">
-          <div className="text-center" style={{ marginBottom: '4rem' }}>
+          <FadeInUp className="text-center" style={{ marginBottom: '4rem' }}>
             <span className="subtitle" style={{ color: 'var(--accent-color)', letterSpacing: '3px', fontSize: '0.9rem', fontWeight: 'bold' }}>100% REAL SITE EXECUTION</span>
             <h2 className="section-title" style={{ color: '#222', fontSize: '3rem', marginTop: '1rem', marginBottom: '1rem', fontFamily: 'Playfair Display, serif' }}>Recent Projects & Transformations</h2>
+            <GoldLineDrawing width="100px" direction="center" style={{ margin: '0 auto 1.5rem auto' }} />
             <p style={{ color: '#666', maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem', marginBottom: '2rem' }}>
               Explore authentic photography and video walkthroughs of completed turnkey interiors, bespoke modular kitchens, custom wardrobes, and master woodworking across Hyderabad.
             </p>
@@ -456,9 +461,9 @@ const Home = () => {
               <span className="tab" style={{ color: '#888', cursor: 'pointer' }}>Ongoing Projects</span>
               <span className="tab" style={{ color: '#888', cursor: 'pointer' }}>Completed Projects</span>
             </div>
-          </div>
+          </FadeInUp>
 
-          <div className="projects-grid">
+          <StaggerContainer className="projects-grid">
             {/* We will map through a few sample projects here */}
             {[
               { img: homeAboutImg, title: 'Full Turnkey Execution', desc: '2bhk interior design. ECO Home Interiors completed this site', loc: 'Tolichowki, Hyderabad' },
@@ -467,9 +472,9 @@ const Home = () => {
               { img: afterWardrobe, title: 'Ceiling-Height Wardrobe System with Overhead Lofts', desc: 'Spacious L-shaped wardrobe system clad in high-gloss Calacatta gold marble laminate with custom half-moon brass handles...', loc: 'Tolichowki, Hyderabad' },
               { img: afterKitchen, title: 'Crockery Storage & Kitchen Pass-Through Hatch', desc: 'Multifunctional dining crockery cabinet and serving counter with vertical backlit glass display towers, black granite top...', loc: 'Shaikpet, Hyderabad' }
             ].map((proj, idx) => (
-              <div key={idx} className="project-card">
+              <StaggerItem key={idx} className="project-card">
                 <div className="project-img-wrapper" style={{ position: 'relative', overflow: 'hidden', borderRadius: '10px' }}>
-                  <img src={proj.img} alt={proj.title} style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                  <CurtainImageReveal src={proj.img} alt={proj.title} height="300px" />
                   <span style={{ position: 'absolute', top: '15px', left: '15px', backgroundColor: '#fff', color: '#222', padding: '5px 12px', fontSize: '0.8rem', fontWeight: 'bold', borderRadius: '4px' }}>Completed Projects</span>
                 </div>
                 <div className="project-info" style={{ padding: '1.5rem 0' }}>
@@ -480,15 +485,15 @@ const Home = () => {
                   <h3 style={{ fontSize: '1.4rem', fontFamily: 'Playfair Display, serif', marginBottom: '1rem', color: '#222' }}>{proj.title}</h3>
                   <p style={{ color: '#666', fontSize: '0.95rem', lineHeight: '1.6' }}>{proj.desc}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
-          <div className="text-center" style={{ marginTop: '3rem' }}>
+          <FadeInUp className="text-center" style={{ marginTop: '3rem' }}>
             <Link to="/gallery" className="btn btn-outline" style={{ borderColor: 'var(--primary-color)', color: 'var(--primary-color)' }}>
               View All Recent Projects <ArrowRight size={18} style={{marginLeft: '8px'}}/>
             </Link>
-          </div>
+          </FadeInUp>
         </div>
       </section>
 
@@ -498,9 +503,10 @@ const Home = () => {
           <div className="contact-grid">
             
             {/* Contact Info */}
-            <div className="contact-info-col">
+            <FadeInUp className="contact-info-col">
               <span className="subtitle" style={{ color: 'var(--accent-color)', letterSpacing: '3px', fontSize: '0.9rem', fontWeight: 'bold' }}>BE OUR NEXT HAPPY CUSTOMER</span>
               <h2 className="section-title" style={{ color: '#fff', fontSize: '3rem', marginTop: '1rem', marginBottom: '1rem', fontFamily: 'Playfair Display, serif' }}>Let's Create Something Exceptional</h2>
+              <GoldLineDrawing width="100px" direction="left" style={{ marginBottom: '1.5rem' }} />
               <p style={{ color: '#ccc', marginBottom: '3rem', fontSize: '1.1rem', lineHeight: '1.8' }}>
                 Speak directly with our interior designers and master carpenters. We offer free on-site measurements across Kurnool City and surrounding areas.
               </p>
@@ -540,7 +546,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </FadeInUp>
 
             {/* Contact Form */}
             <div className="contact-form-col">

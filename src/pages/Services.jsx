@@ -3,6 +3,7 @@ import { ArrowRight, LayoutGrid, Utensils, Bed, Home as HomeIcon, Briefcase, Ham
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import TypewriterText from '../components/TypewriterText';
+import { FadeInUp, StaggerContainer, StaggerItem, CurtainImageReveal } from '../components/ScrollAnimations';
 import gallery4 from '../assets/gallery4.jpg';
 import gallery1 from '../assets/gallery1.jpg';
 import gallery2 from '../assets/gallery2.jpg';
@@ -37,11 +38,11 @@ const Services = () => {
       </div>
 
       <div className="container section">
-        <div className="services-grid">
+        <StaggerContainer className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className="service-card animate-fade-in" style={{animationDelay: `${index * 0.1}s`, overflow: 'hidden', borderRadius: '15px', backgroundColor: '#fff', boxShadow: '0 10px 30px rgba(0,0,0,0.05)'}}>
+            <StaggerItem key={index} className="service-card" style={{overflow: 'hidden', borderRadius: '15px', backgroundColor: '#fff', boxShadow: '0 10px 30px rgba(0,0,0,0.05)'}}>
               <div style={{ height: '250px', overflow: 'hidden' }}>
-                <img src={service.image} alt={service.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }} className="service-img-hover" />
+                <CurtainImageReveal src={service.image} alt={service.title} height="250px" />
               </div>
               <div className="service-content" style={{ padding: '2rem', position: 'relative' }}>
                 <div className="service-icon" style={{ backgroundColor: 'var(--accent-color)', color: '#fff', width: '60px', height: '60px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '-30px', right: '2rem', boxShadow: '0 5px 15px rgba(216, 170, 90, 0.4)' }}>
@@ -53,12 +54,12 @@ const Services = () => {
                   Get a Quote <ArrowRight size={16} style={{marginLeft: '5px'}}/>
                 </Link>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
 
-      <div className="cta-banner">
+      <FadeInUp className="cta-banner">
         <div className="container">
           <div className="cta-banner-content">
             <div className="cta-text">
@@ -68,7 +69,7 @@ const Services = () => {
             <a href="/quote" className="btn btn-primary">Get a Quote <ArrowRight size={18} style={{marginLeft: '8px'}}/></a>
           </div>
         </div>
-      </div>
+      </FadeInUp>
     </div>
   );
 };

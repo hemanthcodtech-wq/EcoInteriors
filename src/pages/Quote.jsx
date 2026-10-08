@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Check, LayoutGrid, Utensils, Bed, Home as HomeIcon, Briefcase, Hammer, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import TypewriterText from '../components/TypewriterText';
+import { FadeInUp, StaggerContainer, StaggerItem } from '../components/ScrollAnimations';
 import bgImage from '../assets/home-cta.jpg';
 import './pages.css';
 
@@ -79,7 +80,7 @@ const Quote = () => {
       </div>
 
       <div className="container" style={{marginTop: '-60px', position: 'relative', zIndex: 10}}>
-        <div className="quote-form-container quote-form-card">
+        <FadeInUp className="quote-form-container quote-form-card">
           
           <div className="quote-steps">
             <div className="quote-step active">
@@ -119,9 +120,9 @@ const Quote = () => {
               <span style={{ color: 'var(--accent-color)', fontSize: '1.2rem' }}>02.</span> Select Your Service
             </h3>
             
-            <div className="service-selector" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+            <StaggerContainer className="service-selector" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
               {services.map(service => (
-                <div 
+                <StaggerItem 
                   key={service.id} 
                   className={`service-option ${selectedServices.includes(service.id) ? 'selected' : ''}`}
                   onClick={() => toggleService(service.id)}
@@ -154,9 +155,9 @@ const Quote = () => {
                   }}>
                     {selectedServices.includes(service.id) && <Check size={16} color="#fff" strokeWidth={3} />}
                   </div>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
 
             <div className="quote-footer-row">
               <div style={{color: '#666', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '10px'}}>
@@ -169,8 +170,7 @@ const Quote = () => {
             </div>
 
           </div>
-
-        </div>
+        </FadeInUp>
       </div>
     </div>
   );

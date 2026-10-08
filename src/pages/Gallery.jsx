@@ -5,6 +5,7 @@ import gallery3 from '../assets/gallery3.jpg';
 import gallery4 from '../assets/gallery4.jpg';
 import { motion } from 'framer-motion';
 import TypewriterText from '../components/TypewriterText';
+import { StaggerContainer, StaggerItem, CurtainImageReveal } from '../components/ScrollAnimations';
 import './pages.css';
 import './Gallery.css';
 
@@ -34,12 +35,11 @@ const Gallery = () => {
       </div>
 
       <div className="container section">
-        <div className="masonry-gallery">
+        <StaggerContainer className="masonry-gallery">
           {images.map((img, index) => (
-            <div 
+            <StaggerItem 
               key={index} 
               className="masonry-item" 
-              style={{animationDelay: `${index * 0.15}s`}}
             >
               <div className="image-wrapper" onClick={() => setSelectedImage(img)}>
                 <img src={img.src} alt={img.title} />
@@ -49,9 +49,9 @@ const Gallery = () => {
                   <button className="view-btn">View Project</button>
                 </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
 
       </div>

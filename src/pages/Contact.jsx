@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, MapPin, Phone, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TypewriterText from '../components/TypewriterText';
+import { FadeInUp, StaggerContainer, StaggerItem } from '../components/ScrollAnimations';
 import './pages.css';
 
 const Contact = () => {
@@ -98,21 +99,21 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="contact-card">
+          <FadeInUp className="contact-card">
             <div className="contact-card-icon"><MapPin size={24} /></div>
             <div className="contact-card-content">
               <h4>Location</h4>
               <p>D no-87/1392-B-C-11, shop no 2, opp- Omega hospital,<br/>100ft road, vasavi nagar, kurnool city, AP-518002</p>
             </div>
-          </div>
+          </FadeInUp>
 
           {/* Map placeholder */}
-          <div className="map-placeholder mt-4" style={{ height: '250px', background: '#eee', borderRadius: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2rem' }}>
+          <FadeInUp className="map-placeholder mt-4" style={{ height: '250px', background: '#eee', borderRadius: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2rem' }}>
             <span style={{color: '#999'}}>Map View</span>
-          </div>
+          </FadeInUp>
         </div>
 
-        <div className="contact-form-section">
+        <FadeInUp className="contact-form-section">
           <h3>Send Us an Enquiry</h3>
           <form onSubmit={handleWhatsAppSubmit}>
             <div className="form-row">
@@ -149,20 +150,20 @@ const Contact = () => {
             
             <button type="submit" className="btn btn-primary btn-block" style={{borderRadius: '30px', padding: '1rem', fontSize: '1.1rem'}}>Send via WhatsApp →</button>
           </form>
-        </div>
+        </FadeInUp>
         </div>
       </div>
 
-      <div style={{ backgroundColor: 'var(--bg-dark)', padding: '5rem 0' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
+      <section style={{ backgroundColor: 'var(--bg-dark)', padding: '5rem 0' }}>
+        <FadeInUp className="container" style={{ maxWidth: '800px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span className="subtitle" style={{ color: 'var(--accent-color)', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.9rem' }}>Have Questions?</span>
             <h2 style={{ fontSize: '2.5rem', fontFamily: 'Playfair Display, serif', color: '#fff', marginTop: '1rem' }}>Frequently Asked Questions</h2>
           </div>
           
-          <div className="faq-accordion" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <StaggerContainer className="faq-accordion" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {faqs.map((faq, index) => (
-              <div 
+              <StaggerItem 
                 key={index} 
                 className="faq-item" 
                 style={{ 
@@ -207,11 +208,11 @@ const Contact = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
-        </div>
-      </div>
+          </StaggerContainer>
+        </FadeInUp>
+      </section>
     </>
   );
 };
