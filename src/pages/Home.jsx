@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle, Ruler, PenTool, Image as ImageIcon, Layers, Ha
 import { motion } from 'framer-motion';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import TypewriterText from '../components/TypewriterText';
-import { FadeInUp, StaggerContainer, StaggerItem, GoldLineDrawing } from '../components/ScrollAnimations';
+import { FadeInUp, StaggerContainer, StaggerItem, GoldLineDrawing, CurtainImageReveal } from '../components/ScrollAnimations';
 import homeHeroBg from '../assets/home-hero.jpg';
 import homeAboutImg from '../assets/home-about.jpg';
 import homeCtaBg from '../assets/home-cta.jpg';
