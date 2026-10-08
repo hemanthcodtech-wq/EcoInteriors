@@ -1,0 +1,126 @@
+/* Gallery Animations and Layout */
+.masonry-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.masonry-item {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease forwards;
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(36,4,20,0.95) 0%, rgba(36,4,20,0.4) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem 2rem;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.image-wrapper:hover .hover-overlay {
+  opacity: 1;
+}
+
+.image-category {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease 0.1s;
+}
+
+.image-title {
+  color: var(--text-light);
+  font-size: 1.8rem;
+  margin: 0.5rem 0 1.5rem;
+  font-family: 'Playfair Display', serif;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease 0.2s;
+}
+
+.view-btn {
+  align-self: flex-start;
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--accent-color);
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease 0.3s;
+}
+
+.view-btn:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.image-wrapper:hover .image-category,
+.image-wrapper:hover .image-title,
+.image-wrapper:hover .view-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .masonry-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .hover-overlay {
+    opacity: 1; /* Always show overlay slightly on mobile for accessibility */
+    background: linear-gradient(to top, rgba(36,4,20,0.9) 0%, transparent 100%);
+  }
+
+  .image-category, .image-title, .view-btn {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,107 @@
+.cinematic-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #15020a 0%, #240414 50%, #100108 100%);
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-curtain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  z-index: 20;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cinematic-logo-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.abstract-logo-drawing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.glowing-leaf {
+  position: absolute;
+  top: 40px;
+  filter: drop-shadow(0 0 10px rgba(216, 170, 90, 0.8));
+}
+
+.house-outline {
+  position: absolute;
+  top: 60px;
+}
+
+.full-logo-reveal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cinematic-logo {
+  width: 180px;
+  filter: drop-shadow(0 0 20px rgba(216, 170, 90, 0.3));
+}
+
+.cinematic-tagline {
+  margin-top: -30px;
+  text-align: center;
+  position: relative;
+}
+
+.cinematic-ribbon-wrapper {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150%;
+  height: 2px;
+}
+
+.cinematic-gold-ribbon {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  transform-origin: left;
+}
+
+.splash-tagline {
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}

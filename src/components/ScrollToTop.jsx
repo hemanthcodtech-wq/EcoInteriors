@@ -1,0 +1,18 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Some browsers need a slight delay to ensure the page has rendered before scrolling
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+export default ScrollToTop;
