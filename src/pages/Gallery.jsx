@@ -5,7 +5,11 @@ import { StaggerContainer, StaggerItem, CurtainImageReveal } from '../components
 import './pages.css';
 import './Gallery.css';
 
-const galleryModules = import.meta.glob('../gallery/*.{jpeg,jpg,png,gif,webp}', { eager: true });
+const galleryModules = import.meta.glob([
+  '../Gallery/*.{jpeg,jpg,png,gif,webp,JPEG,JPG,PNG,GIF,WEBP}',
+  '../gallery/*.{jpeg,jpg,png,gif,webp,JPEG,JPG,PNG,GIF,WEBP}'
+], { eager: true });
+
 const galleryImages = Object.values(galleryModules).map((module, index) => ({
   src: module.default || module,
   title: `Interior Project ${index + 1}`,
