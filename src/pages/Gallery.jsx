@@ -1,23 +1,21 @@
 import React from 'react';
-import gallery1 from '../assets/gallery1.jpg';
-import gallery2 from '../assets/gallery2.jpg';
-import gallery3 from '../assets/gallery3.jpg';
-import gallery4 from '../assets/gallery4.jpg';
 import { motion } from 'framer-motion';
 import TypewriterText from '../components/TypewriterText';
 import { StaggerContainer, StaggerItem, CurtainImageReveal } from '../components/ScrollAnimations';
 import './pages.css';
 import './Gallery.css';
 
+const galleryModules = import.meta.glob('../gallery/*.{jpeg,jpg,png,gif,webp}', { eager: true });
+const galleryImages = Object.values(galleryModules).map((module, index) => ({
+  src: module.default || module,
+  title: `Interior Project ${index + 1}`,
+  category: 'Gallery'
+}));
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
-  const images = [
-    { src: gallery1, title: 'Luxury Modular Kitchen', category: 'Kitchens' },
-    { src: gallery2, title: 'Elegant Bedroom Interior', category: 'Bedrooms' },
-    { src: gallery3, title: 'Modern Living Space', category: 'Living Rooms' },
-    { src: gallery4, title: 'Custom Walk-In Wardrobe', category: 'Wardrobes' },
-  ];
+  const images = galleryImages;
 
   return (
     <>

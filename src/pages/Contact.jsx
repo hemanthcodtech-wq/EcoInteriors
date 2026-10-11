@@ -107,9 +107,17 @@ const Contact = () => {
             </div>
           </FadeInUp>
 
-          {/* Map placeholder */}
-          <FadeInUp className="map-placeholder mt-4" style={{ height: '250px', background: '#eee', borderRadius: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2rem' }}>
-            <span style={{color: '#999'}}>Map View</span>
+          {/* Map View */}
+          <FadeInUp className="map-container mt-4" style={{ height: '250px', borderRadius: '15px', overflow: 'hidden', marginTop: '2rem' }}>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30712.02761959542!2d78.03835193320343!3d15.803771973258668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dda7126f38ab%3A0x4e3d66912751be69!2sOmega%20Cancer%20Hospital%20(Cancer%20Treatment%20Hospital)%20-%20Kurnool!5e0!3m2!1sen!2sin!4v1791522669618!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
           </FadeInUp>
         </div>
 

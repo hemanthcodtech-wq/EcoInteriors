@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import logoImg from '../assets/logo.png';
 import './Footer.css';
 
@@ -65,10 +65,11 @@ const Footer = () => {
             <div className="social-links">
               <h4 className="social-heading">Follow Us</h4>
               <div className="social-icons">
-                <a href="#"><FaFacebookF size={20} /></a>
-                <a href="#"><FaInstagram size={20} /></a>
-                <a href="#"><FaTwitter size={20} /></a>
-                <a href="#"><FaLinkedinIn size={20} /></a>
+                <a href="https://www.facebook.com/profile.php?id=100008372850691" target="_blank" rel="noopener noreferrer"><FaFacebookF size={20} /></a>
+                <a href="https://www.instagram.com/krishna9885256866?xtok=YzVzZ2VyNTl3bGs2" target="_blank" rel="noopener noreferrer"><FaInstagram size={20} /></a>
+                {/* <a href="#"><FaTwitter size={20} /></a> */}
+                {/* <a href="#"><FaLinkedinIn size={20} /></a> */}
+                <a href="https://wa.me/+919885256866" target="_blank" rel="noopener noreferrer"><FaWhatsapp size={20} /></a>
               </div>
             </div>
           </div>
